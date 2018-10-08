@@ -1,0 +1,33 @@
+body {
+  background-color: rgba(214, 234, 237, 0.432);
+  font-family: 'Krub', sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.dropdown.open .dropdown-menu {
+  display: block;
+  width: 100%;
+}
+.titulo{
+  padding-top: 2%;
+  color: rgb(23, 201, 162);
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+.dropdown{
+  margin: 2% 0;
+}
+.dropdown-menu li{
+  padding: 1% 4%;
+}
+.dropdown-menu li a{
+  color: darkblue;
+}
+/* font-family: 'K2D', sans-serif;
+font-family: 'Krub', sans-serif;
+font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Exo 2', sans-serif;
+font-family: 'Righteous', cursive; */
