@@ -3,6 +3,7 @@
   <head>
     <title>DonWeb</title>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="stylesheets/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="javascripts/angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
@@ -52,57 +53,57 @@
           </tfoot>
         </table>
       </div>
+      <div class="modal fade" id='detalles' tabindex="-1" role="dialog" aria-labelledby="detallesLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detallesLabel">{{usuarioSeleccionado.firstName + ' ' + usuarioSeleccionado.lastName}}
+                      <small class="text-muted">{{usuarioSeleccionado.age}}</small>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col "><strong>Email: </strong>{{usuarioSeleccionado.email}}</div>
+                      <div class="col"><strong>Tel: </strong>{{usuarioSeleccionado.phone}}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col"><strong>Dirección: </strong>{{usuarioSeleccionado.address}}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col"><strong>Registración: </strong> {{usuarioSeleccionado.registered}}</div>
+                      <div class="col"><strong>Balance: </strong>{{usuarioSeleccionado.balance}}</div>
+                    </div>
+                    <div ng-if="usuarioSeleccionado.products.length >= 1">
+                      <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Fecha Vencimiento</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="producto in usuarioSeleccionado.products">
+                            <td>{{producto.name}}</td>
+                            <td>{{producto.price}}</td>
+                            <td>{{producto.expirationDate}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
+                  </div>
+            </div>
+          </div>
+        </div>
     </div>
 
-    <div class="modal fade" id='detalles' tabindex="-1" role="dialog" aria-labelledby="detallesLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="detallesLabel">{{usuarioSeleccionado.firstName + ' ' + usuarioSeleccionado.LastName}}
-                  <small class="text-muted">{{usuarioSeleccionado.age}}</small>
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div class="col "><strong>Email:</strong> {{usuarioSeleccionado.email}}</div>
-                  <div class="col"><strong>Tel:</strong>{{usuarioSeleccionado.phone}}</div>
-                </div>
-                <div class="row">
-                  <div class="col"><strong>Dirección:</strong>{{usuarioSeleccionado.address}}</div>
-                </div>
-                <div class="row">
-                  <div class="col"><strong>Registración: </strong> {{usuarioSeleccionado.registered}}</div>
-                  <div class="col"><strong>Balance:</strong>{{usuarioSeleccionado.balance}}</div>
-                </div>
-                <div>
-                  <table class="table table-sm">
-                    <thead>
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Fecha Vencimiento</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr ng-repeat="producto in usuarioSeleccionado.products">
-                        <td>{{producto.name}}</td>
-                        <td>{{producto.price}}</td>
-                        <td>{{producto.expirationDate}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-        </div>
-      </div>
-    </div>
+
   </body>
   <script src="javascripts/jquery/dist/jquery.js"></script>
   <script src="stylesheets/bootstrap/dist/js/bootstrap.js"></script>

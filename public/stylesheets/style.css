@@ -25,6 +25,12 @@ a {
 .dropdown-menu li a{
   color: darkblue;
 }
+.modal-body .table{
+  margin-top:2%;
+}
+.modal_body .col{
+  margin-bottom: 1%;
+}
 /* font-family: 'K2D', sans-serif;
 font-family: 'Krub', sans-serif;
 font-family: 'Nanum Gothic', sans-serif;
