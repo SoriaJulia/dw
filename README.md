@@ -4,8 +4,8 @@ Before installing, download and install [Node.js](https://nodejs.org/en/download
 
 Install dependecies:
 
-´$ npm install´
+'$ npm install'
 
 Run Server:
 
-´$ npm start´
+'$ npm start'
